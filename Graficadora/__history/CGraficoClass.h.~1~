@@ -1,0 +1,34 @@
+//---------------------------------------------------------------------------
+
+#ifndef CGraficoClassH
+#define CGraficoClassH
+//---------------------------------------------------------------------------
+#endif
+
+#include <iostream>
+#include <stdio.h>
+#include <math.h>
+#include <ExtCtrls.hpp>
+#include <Graphics.hpp>
+#include "CPolinomioPunt.h"
+using namespace std;
+class Cgrafico {
+	private:
+	 int Cx,Cy;
+	 int Upuntos;
+	 float Dx;
+	 void DibujarPunto(TForm *pantalla, float x, float y, int color);
+	 double Fx (float x);
+	 PolinomioP P;
+	public:
+	 Cgrafico();
+	 void DibujarEje(TForm *paint);
+	 void Crear(int Cx, int Cy, int VUp,float Dx);
+	 void DefinirEje(int Cx1, int Cy2);
+	 void DefinirUPuntos(int VUp);
+	 void GraficarFuncion(TForm *, int a, int b);
+	 void Insertar_termino(int coef, int exp);
+	 void MostrarPol(TLabel *);
+	 void MostrarArea(TLabel *);
+	 float CalcularArea(int a, int b);
+};
